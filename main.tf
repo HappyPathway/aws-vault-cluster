@@ -38,7 +38,7 @@ module "vault_cluster" {
   resource_tags = "${var.resource_tags}"
 }
 
-resource "aws_security_group_rule" "consul_client" {
+resource "aws_security_group_rule" "consul_client_tcp" {
   security_group_id        = "${terraform_remote_state.consul_cluster.cluster_sg}"
   source_security_group_id = "${module.vault_cluster.vault_security_group}"
   from_port                = 0
@@ -46,7 +46,7 @@ resource "aws_security_group_rule" "consul_client" {
   protocol                 = "tcp"
 }
 
-resource "aws_security_group_rule" "consul_client" {
+resource "aws_security_group_rule" "consul_client_udp" {
   security_group_id        = "${terraform_remote_state.consul_cluster.cluster_sg}"
   source_security_group_id = "${module.vault_cluster.vault_security_group}"
   from_port                = 0
