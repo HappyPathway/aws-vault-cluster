@@ -1,5 +1,5 @@
 storage "consul" {
-  address = "${consul_address}:8500"
+  address = "127.0.0.1:8500"
   path    = "vault"
 }
 
