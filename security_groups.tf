@@ -4,6 +4,7 @@ resource "aws_security_group_rule" "consul_client_tcp" {
   from_port                = 0
   to_port                  = 65535
   protocol                 = "tcp"
+  type                     = "ingress"
 }
 
 resource "aws_security_group_rule" "consul_client_udp" {
@@ -12,4 +13,5 @@ resource "aws_security_group_rule" "consul_client_udp" {
   from_port                = 0
   to_port                  = 65535
   protocol                 = "udp"
+  type                     = "ingress"
 }
