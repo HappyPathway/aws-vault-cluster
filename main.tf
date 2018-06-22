@@ -31,9 +31,9 @@ module "vault_cluster" {
   version       = "1.0.0"
   key_name      = "${var.key_name}"
   nodes         = "${var.vault_cluster_servers}"
-  subnets       = "${data.terraform_remote_state.network.public_subnet}"
+  subnet        = "${data.terraform_remote_state.network.public_subnet}"
   vpc_id        = "${data.terraform_remote_state.network.vpc_id}"
-  config        = "${file("${path.root}/vault_config.json")}"
+  config        = "${data.template_file.vault_config.rendered}"
   download_url  = "${var.vault_download_url}"
   resource_tags = "${var.resource_tags}"
 }
