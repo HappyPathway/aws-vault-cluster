@@ -5,3 +5,5 @@ variable "vault_download_url" {
 variable "key_name" {}
 
 variable "consul_cluster" {}
+
+variable "organization" {}
