@@ -30,7 +30,7 @@ module "vault_cluster" {
   source        = "app.terraform.io/Darnold-Hashicorp/vault-cluster/aws"
   version       = "1.0.1"
   key_name      = "${var.key_name}"
-  nodes         = "${var.vault_cluster_servers}"
+  servers       = "${var.servers}"
   subnet        = "${data.terraform_remote_state.network.public_subnet}"
   vpc_id        = "${data.terraform_remote_state.network.vpc_id}"
   config        = "${data.template_file.vault_config.rendered}"
