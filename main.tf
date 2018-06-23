@@ -1,25 +1,6 @@
 //--------------------------------------------------------------------
 // Variables
 
-variable "resource_tags" {
-  type = "map"
-
-  default = {
-    Owner       = "darnold"
-    TTL         = 48
-    ClusterName = "vault-demos"
-  }
-}
-
-//--------------------------------------------------------------------
-data "terraform_remote_state" "network" {
-  backend = "atlas"
-
-  config {
-    name = "${var.organization}/${var.network_ws}"
-  }
-}
-
 provider "aws" {
   region = "${data.terraform_remote_state.network.region}"
 }
@@ -28,7 +9,7 @@ provider "aws" {
 // Modules
 module "vault_cluster" {
   source              = "app.terraform.io/Darnold-Hashicorp/vault-cluster/aws"
-  version             = "1.0.7"
+  version             = "1.0.8"
   key_name            = "${var.key_name}"
   servers             = "${var.servers}"
   subnet              = "${data.terraform_remote_state.network.public_subnet}"
