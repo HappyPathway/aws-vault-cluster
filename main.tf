@@ -38,4 +38,5 @@ module "vault_cluster" {
   consul_download_url = "${var.consul_download_url}"
   resource_tags       = "${var.resource_tags}"
   consul_cluster      = "${data.aws_instance.consul_instance.private_ip}"
+  region              = "${data.terraform_remote_state.network.region}"
 }
