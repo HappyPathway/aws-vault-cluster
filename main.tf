@@ -28,7 +28,7 @@ provider "aws" {
 // Modules
 module "vault_cluster" {
   source              = "app.terraform.io/Darnold-Hashicorp/vault-cluster/aws"
-  version             = "1.0.6"
+  version             = "1.0.7"
   key_name            = "${var.key_name}"
   servers             = "${var.servers}"
   subnet              = "${data.terraform_remote_state.network.public_subnet}"
@@ -37,5 +37,5 @@ module "vault_cluster" {
   vault_download_url  = "${var.vault_download_url}"
   consul_download_url = "${var.consul_download_url}"
   resource_tags       = "${var.resource_tags}"
-  consul_cluster      = "${var.consul_cluster}"
+  consul_cluster      = "${data.aws_instance.consul_instance.private_ip}"
 }
