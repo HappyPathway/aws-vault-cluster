@@ -1,5 +1,5 @@
 output "vault_address" {
-  value = "${module.vault_cluster.vault_address}"
+  value = "${module.vault_cluster.address}"
 }
 
 output "cluster_hash" {
