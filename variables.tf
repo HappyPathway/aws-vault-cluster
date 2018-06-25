@@ -13,3 +13,5 @@ variable "network_ws" {}
 variable "servers" {
   default = 3
 }
+
+variable "env" {}
