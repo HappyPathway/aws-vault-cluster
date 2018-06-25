@@ -15,8 +15,8 @@ module "vault_cluster" {
   subnet            = "${data.terraform_remote_state.network.public_subnet}"
   vpc_id            = "${data.terraform_remote_state.network.vpc_id}"
   resource_tags     = "${var.resource_tags}"
-  consul_cluster    = "${data.aws_instance.consul_instance.cluster}"
-  consul_cluster_sg = "${data.aws_instance.consul_instance.cluster_sg}"
+  consul_cluster    = "${data.terraform_remote_state.consul_cluster.cluster}"
+  consul_cluster_sg = "${data.terraform_remote_state.consul_cluster.cluster_sg}"
   region            = "${data.terraform_remote_state.network.region}"
   env               = "${var.env}"
 }
