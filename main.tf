@@ -9,7 +9,7 @@ provider "aws" {
 // Modules
 module "vault_cluster" {
   source            = "app.terraform.io/Darnold-Hashicorp/vault-cluster/aws"
-  version           = "1.4.8"
+  version           = "1.4.9"
   key_name          = "${var.key_name}"
   servers           = "${var.servers}"
   subnet            = "${data.terraform_remote_state.network.public_subnet}"
@@ -19,4 +19,5 @@ module "vault_cluster" {
   consul_cluster_sg = "${data.terraform_remote_state.consul_cluster.cluster_sg}"
   region            = "${data.terraform_remote_state.network.region}"
   env               = "${var.env}"
+  vault_license     = "${var.vault_license}"
 }

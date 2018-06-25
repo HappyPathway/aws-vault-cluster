@@ -11,3 +11,5 @@ variable "servers" {
 }
 
 variable "env" {}
+
+variable "vault_license" {}
