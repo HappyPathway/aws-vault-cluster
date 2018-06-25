@@ -18,7 +18,5 @@ module "vault_cluster" {
   consul_cluster    = "${data.aws_instance.consul_instance.cluster}"
   consul_cluster_sg = "${data.aws_instance.consul_instance.cluster_sg}"
   region            = "${data.terraform_remote_state.network.region}"
-  service_name      = "vault-cluster"
-  service_version   = "1.0.1"
   env               = "${var.env}"
 }
