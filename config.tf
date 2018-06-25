@@ -24,7 +24,3 @@ data "terraform_remote_state" "consul_cluster" {
     name = "${var.organization}/${var.consul_cluster}"
   }
 }
-
-data "aws_instance" "consul_instance" {
-  instance_id = "${data.terraform_remote_state.consul_cluster.instances[0]}"
-}
