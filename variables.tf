@@ -13,3 +13,7 @@ variable "servers" {
 variable "env" {}
 
 variable "vault_license" {}
+
+variable "service_version" {
+  default = "0.10.3"
+}
