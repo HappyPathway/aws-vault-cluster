@@ -17,3 +17,7 @@ variable "vault_license" {}
 variable "vault_version" {
   default = "0.10.3"
 }
+
+variable "install_type" {
+  default = "oss"
+}

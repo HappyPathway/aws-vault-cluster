@@ -21,4 +21,5 @@ module "vault_cluster" {
   env               = "${var.env}"
   vault_license     = "${var.vault_license}"
   service_version   = "${var.vault_version}"
+  install_type      = "${var.install_type}"
 }
