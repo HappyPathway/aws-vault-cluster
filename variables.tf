@@ -14,6 +14,6 @@ variable "env" {}
 
 variable "vault_license" {}
 
-variable "service_version" {
+variable "vault_version" {
   default = "0.10.3"
 }
