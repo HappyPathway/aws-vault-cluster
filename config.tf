@@ -3,7 +3,7 @@ variable "resource_tags" {
 
   default = {
     Owner       = "darnold"
-    TTL         = 48
+    TTL         = -1
     ClusterName = "vault-demos"
   }
 }
