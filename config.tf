@@ -1,3 +1,7 @@
+variable "owner" {}
+variable "ttl" {}
+variable "cluster_name" {}
+
 locals {
   resource_tags {
     Owner       = "${var.owner}"
