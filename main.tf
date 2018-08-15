@@ -8,7 +8,7 @@ provider "aws" {
 //--------------------------------------------------------------------
 // Modules
 module "vault_cluster" {
-  source            = "app.terraform.io/Darnold-NVC/vault-cluster/aws"
+  source            = "app.terraform.io/Darnold-Hashicorp/vault-cluster/aws"
   version           = "1.5.1"
   key_name          = "${var.key_name}"
   servers           = "${var.servers}"
