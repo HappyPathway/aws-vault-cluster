@@ -1,10 +1,8 @@
-variable "resource_tags" {
-  type = "map"
-
-  default = {
-    Owner       = "darnold"
-    TTL         = -1
-    ClusterName = "vault-demos"
+locals {
+  resource_tags {
+    Owner       = "${var.owner}"
+    TTL         = "${var.ttl}"
+    ClusterName = "${var.cluster_name}"
   }
 }
 
